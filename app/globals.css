@@ -77,8 +77,8 @@ h5 { font-size: 1.1rem; }
 p { margin: 0 0 1.1rem; }
 p:last-child { margin-bottom: 0; }
 
-a { color: inherit; text-decoration: none; transition: var(--yc-transition); }
-a:hover { color: var(--yc-primary); }
+body a { color: inherit; text-decoration: none; transition: var(--yc-transition); }
+body a:hover { color: var(--yc-primary); }
 
 img { max-width: 100%; height: auto; }
 
