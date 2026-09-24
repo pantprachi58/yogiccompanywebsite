@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 
@@ -24,14 +25,16 @@ export default function CaseStudyBand() {
 
           <Reveal className="col-lg-6" animation="fade-up" delay={120}>
             <div className="yc-shape-soft">
-              <Image
-                src="/images/ogic.png"
-                alt="A White Paper from The Yogic Company: book cover showing lungs formed from trees and clouds"
-                width={1429}
-                height={1101}
-                sizes="(max-width: 991px) 90vw, 45vw"
-                style={{ width: "100%", height: "auto" }}
-              />
+              <Link href="/whitepaper" className="d-block">
+                <Image
+                  src="/images/ogic.png"
+                  alt="A White Paper from The Yogic Company: book cover showing lungs formed from trees and clouds"
+                  width={1429}
+                  height={1101}
+                  sizes="(max-width: 991px) 90vw, 45vw"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </Link>
             </div>
           </Reveal>
         </div>

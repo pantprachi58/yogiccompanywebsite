@@ -42,12 +42,17 @@ export default function WhitePaperPage() {
           <Reveal className="yc-shape-soft mb-5">
             <Image
               src={whitePaper.image}
-              alt="Lungs formed from trees and clouds — the Yogic Company white paper cover"
+              alt="Open grassland under a wide, softly lit sky at dusk — a peaceful, empty landscape"
               width={whitePaper.imageWidth || 1400}
               height={whitePaper.imageHeight || 900}
               sizes="(max-width: 1290px) 92vw, 1290px"
               priority
-              style={{ width: "100%", height: "clamp(240px, 40vw, 520px)", objectFit: "cover" }}
+              style={{
+                width: "100%",
+                height: "clamp(240px, 40vw, 520px)",
+                objectFit: "cover",
+                objectPosition: "50% 40%",
+              }}
             />
           </Reveal>
 
