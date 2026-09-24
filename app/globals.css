@@ -271,7 +271,7 @@ img { max-width: 100%; height: auto; }
 .yc-header--scrolled { box-shadow: 0 6px 30px rgba(75, 99, 85, 0.09); }
 
 .yc-logo { display: inline-flex; align-items: center; }
-.yc-logo__mark { display: block; width: auto; height: 60px; }
+.yc-logo__mark { display: block; width: auto; height: 80px; }
 .yc-logo__name {
   font-family: var(--yc-font-display);
   font-style: italic;
@@ -391,8 +391,8 @@ img { max-width: 100%; height: auto; }
 /* ---------- Hero ---------- */
 .yc-hero { position: relative; background: var(--yc-primary); }
 .yc-hero__slide { position: relative; min-height: clamp(520px, 88vh, 860px); display: flex; align-items: center; }
-.yc-hero__media { position: absolute; inset: 0; overflow: hidden; }
-.yc-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.yc-hero__media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.yc-hero__media video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .yc-hero__media::after {
   content: "";
   position: absolute;

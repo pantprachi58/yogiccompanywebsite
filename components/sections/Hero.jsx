@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import Button from "@/components/ui/Button";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
 
 const slides = [
   {
@@ -14,25 +14,18 @@ const slides = [
     accent: "Breath & Stillness",
     text: "Rooted in Himalayan yogic lineage. Guided practices in classical pranayama, consciousness exploration, and therapeutic restoration.",
     cta: { label: "Explore Programs", href: "/programs" },
-    image: "/images/hero/hero-namaste.jpg",
-    alt: "Two practitioners standing in namaste in a light, plant-filled space",
-    priority: true,
   },
   {
     lead: "Breathing. Postures.",
     accent: "Rejuvenation",
     text: "A holistic practice that blends yoga, breathwork and relaxation to restore balance in body, mind and breath.",
     cta: { label: "Join a Class", href: "/classes" },
-    image: "/images/hero/open-landscape.jpg",
-    alt: "Open grassland under a wide, softly lit sky at dusk",
   },
   {
     lead: "Breathe. Live.",
     accent: "Love",
     text: "Flagship programmes for stress, breath capacity and sleep — guided live, adapted to you, and built to keep.",
     cta: { label: "Book a Consultation", href: "/consultation" },
-    image: "/images/about/rejuvenation-banner.jpg",
-    alt: "Rejuvenation — unlocking the calm within",
   },
 ];
 
@@ -42,6 +35,9 @@ export default function Hero() {
       <h1 className="visually-hidden">
         Yogic Company — breathing, postures and rejuvenation
       </h1>
+      <div className="yc-hero__media" aria-hidden="true">
+        <BackgroundVideo src="/video/1.mp4" poster="/images/hero/hero-namaste.jpg" />
+      </div>
       <Swiper
         modules={[Autoplay, EffectFade, Navigation]}
         effect="fade"
@@ -56,16 +52,6 @@ export default function Hero() {
         {slides.map((slide) => (
           <SwiperSlide key={slide.accent}>
             <div className="yc-hero__slide">
-              <div className="yc-hero__media">
-                <Image
-                  src={slide.image}
-                  alt={slide.alt}
-                  fill
-                  sizes="100vw"
-                  priority={slide.priority}
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
               <div className="yc-container">
                 <div className="yc-hero__content">
                   <span className="yc-eyebrow" style={{ color: "var(--yc-tint)" }}>
