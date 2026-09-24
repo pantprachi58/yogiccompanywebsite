@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
+import LoopVideo from "@/components/ui/LoopVideo";
 
 export default function BreathingCore() {
   return (
@@ -9,16 +9,11 @@ export default function BreathingCore() {
       <div className="yc-container">
         <div className="row g-5 align-items-center">
           <Reveal className="col-lg-5" animation="fade-right">
-            <div className="yc-shape-circle">
-              <Image
-                src="/images/about/breathe-core.jpg"
-                alt="A softly glowing circle with the word breathe at its centre"
-                width={1200}
-                height={1200}
-                sizes="(max-width: 991px) 80vw, 38vw"
-                style={{ width: "100%", height: "auto", aspectRatio: "1 / 1", objectFit: "cover" }}
-              />
-            </div>
+            <LoopVideo
+              src="/video/Breathe.mp4"
+              label="Guided breathing animation: breathe in, hold, breathe out"
+              sound
+            />
           </Reveal>
 
           <Reveal className="col-lg-7" animation="fade-left">

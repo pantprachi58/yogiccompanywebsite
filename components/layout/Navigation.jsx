@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
+import SiteLink from "@/components/ui/SiteLink";
 import { navigation } from "@/lib/site";
 
 function isActive(pathname, href) {
@@ -30,7 +31,7 @@ export default function Navigation() {
               <ul className="yc-nav__submenu">
                 {item.children.map((child) => (
                   <li key={child.href}>
-                    <Link href={child.href}>{child.label}</Link>
+                    <SiteLink href={child.href}>{child.label}</SiteLink>
                   </li>
                 ))}
               </ul>

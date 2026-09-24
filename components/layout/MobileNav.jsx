@@ -6,6 +6,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { navigation, site } from "@/lib/site";
 import Button from "@/components/ui/Button";
+import SiteLink from "@/components/ui/SiteLink";
 
 export default function MobileNav({ show, onHide }) {
   const [open, setOpen] = useState(null);
@@ -47,9 +48,9 @@ export default function MobileNav({ show, onHide }) {
                 <ul className="yc-mobilenav__sub">
                   {item.children.map((child) => (
                     <li key={child.href}>
-                      <Link href={child.href} onClick={onHide}>
+                      <SiteLink href={child.href} onClick={onHide}>
                         {child.label}
-                      </Link>
+                      </SiteLink>
                     </li>
                   ))}
                 </ul>

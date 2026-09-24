@@ -25,10 +25,10 @@ export default function CaseStudyBand() {
           <Reveal className="col-lg-6" animation="fade-up" delay={120}>
             <div className="yc-shape-soft">
               <Image
-                src="/images/about/white-paper-lungs.jpg"
-                alt="Yogic Company white paper cover showing lungs formed from trees and clouds"
-                width={1200}
-                height={926}
+                src="/images/ogic.png"
+                alt="A White Paper from The Yogic Company: book cover showing lungs formed from trees and clouds"
+                width={1429}
+                height={1101}
                 sizes="(max-width: 991px) 90vw, 45vw"
                 style={{ width: "100%", height: "auto" }}
               />

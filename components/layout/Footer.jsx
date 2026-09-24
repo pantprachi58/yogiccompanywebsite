@@ -3,6 +3,7 @@ import { FiMapPin, FiPhone, FiMail, FiInstagram, FiFacebook } from "react-icons/
 import { site, footerLinks, socials } from "@/lib/site";
 import NewsletterForm from "@/components/forms/NewsletterForm";
 import SocialStrip from "@/components/sections/SocialStrip";
+import SiteLink from "@/components/ui/SiteLink";
 
 export default function Footer() {
   return (
@@ -30,7 +31,7 @@ export default function Footer() {
               <ul className="yc-footer__list">
                 {group.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
+                    <SiteLink href={link.href}>{link.label}</SiteLink>
                   </li>
                 ))}
               </ul>

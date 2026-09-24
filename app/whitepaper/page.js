@@ -71,9 +71,9 @@ export default function WhitePaperPage() {
                       <Button href="/programs/breathe-life-guide" size="sm">
                         Breathe Life programme
                       </Button>
-                      <Button href="/whitepaper.pdf" size="sm" target="_blank" rel="noopener noreferrer">
+                      {/* <Button href="/whitepaper.pdf" size="sm" target="_blank" rel="noopener noreferrer">
                         Download Full White Paper (PDF)
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </div>

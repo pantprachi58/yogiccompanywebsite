@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import AosProvider from "@/components/ui/AosProvider";
+import ConsultationProvider from "@/components/ui/ConsultationProvider";
 import GoToTop from "@/components/ui/GoToTop";
 import { site } from "@/lib/site";
 
@@ -54,6 +55,7 @@ export const metadata = {
     images: ["/images/hero/hero-namaste.jpg"],
   },
   icons: {
+    icon: "/icon.png",
     apple: "/apple-icon.png",
   },
 };
@@ -88,9 +90,11 @@ export default function RootLayout({ children }) {
           Skip to content
         </a>
         <AosProvider />
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        <ConsultationProvider>
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+        </ConsultationProvider>
         <GoToTop />
         <script
           type="application/ld+json"

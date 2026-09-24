@@ -1,4 +1,4 @@
-import Link from "next/link";
+import SiteLink from "@/components/ui/SiteLink";
 
 const VARIANTS = {
   primary: "",
@@ -31,9 +31,9 @@ export default function Button({
       );
     }
     return (
-      <Link className={classes} href={href} {...rest}>
+      <SiteLink className={classes} href={href} {...rest}>
         {children}
-      </Link>
+      </SiteLink>
     );
   }
 

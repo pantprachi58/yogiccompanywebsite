@@ -6,7 +6,7 @@ export default function ProgramCard({ program }) {
   return (
     <article className="yc-program">
       <Image
-        src={program.image}
+        src={program.cardImage || program.image}
         alt={`${program.name} programme`}
         fill
         sizes="(max-width: 767px) 90vw, (max-width: 1199px) 45vw, 30vw"
