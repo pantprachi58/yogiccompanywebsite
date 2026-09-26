@@ -243,7 +243,7 @@ export default function ConsultationPage() {
             <Reveal className="col-lg-5">
               <div className="yc-shape-arch">
                 <Image
-                  src="/images/team/yogacharya-manish-pranayama.jpg"
+                  src="/images/team/yogacharya-manish-pranayama.jpeg"
                   alt="Yogacharya Manish practising pranayama outdoors"
                   width={1200}
                   height={1500}

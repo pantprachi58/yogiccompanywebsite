@@ -1509,7 +1509,7 @@ img { max-width: 100%; height: auto; }
   width: 100%;
   padding: 1.6rem 1.7rem;
 }
-.yc-consult__aside .yc-eyebrow { color: var(--yc-tint); margin-bottom: 0.35rem; }
+.yc-consult__aside .yc-eyebrow { color: #000; margin-bottom: 0.35rem; font-size: 16px; font-weight: 500;}
 .yc-consult__tagline {
   margin: 0;
   font-family: var(--yc-font-display);
@@ -1529,9 +1529,10 @@ img { max-width: 100%; height: auto; }
   display: flex;
   gap: 0.65rem;
   align-items: flex-start;
-  font-size: 0.86rem;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
+  color: #000;
 }
 .yc-consult__points svg {
   flex: none;

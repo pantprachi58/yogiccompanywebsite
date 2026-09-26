@@ -220,7 +220,7 @@ export default function ConsultationModal({ show, onHide }) {
       <div className="yc-consult__grid">
         <aside className="yc-consult__aside">
           <Image
-            src="/images/team/yogacharya-manish-pranayama.jpg"
+            src="/images/team/yogacharya-manish-pranayama.jpeg"
             alt="Yogacharya Manish practising pranayama outdoors"
             fill
             sizes="(max-width: 767px) 100vw, 340px"
