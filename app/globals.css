@@ -409,14 +409,14 @@ img { max-width: 100%; height: auto; }
     );
   }
 }
-.yc-hero__content { position: relative; z-index: 2; max-width: 40rem; padding-block: 5rem; color: rgba(255, 255, 255, 0.88); }
+.yc-hero__content { position: relative; z-index: 2; max-width: 500px; padding-block: 5rem; color: rgba(255, 255, 255, 0.88); }
 .yc-hero__title {
   font-family: var(--yc-font-display);
   font-weight: 500;
   font-style: italic;
   line-height: 1.18;
   letter-spacing: -0.01em;
-  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-size: 60px;
   color: #fff;
   margin-bottom: 1.25rem;
 }

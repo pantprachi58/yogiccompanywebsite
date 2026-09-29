@@ -37,7 +37,7 @@ export default function AboutPage() {
             <Reveal className="col-lg-6" animation="fade-right">
               <div className="yc-shape-arch">
                 <Image
-                  src="/images/about/about-hero.jpg"
+                  src="/images/aboutus.png"
                   alt="Soft abstract portrait in warm light, the About Yogic Company motif"
                   width={1400}
                   height={1000}

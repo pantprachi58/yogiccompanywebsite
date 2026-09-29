@@ -27,7 +27,7 @@ const series = [
     subtitle: "Research from around the world",
     text: "A transformative content series dedicated to unravelling the complexities of infertility with compassion and science.",
     cta: "Learn more",
-    image: "/images/articles/the-biological-clock.jpg",
+    image: "/images/seed.png",
   },
 ];
 
