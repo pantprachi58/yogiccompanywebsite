@@ -11,7 +11,7 @@ function isActive(pathname, href) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export default function Navigation() {
+export default function Navigation( {isScrolled ,setIsScrolled}) {
   const pathname = usePathname();
 
   return (
@@ -21,7 +21,7 @@ export default function Navigation() {
           <li className="yc-nav__item" key={item.href}>
             <Link
               href={item.href}
-              className="yc-nav__link"
+              className={`yc-nav__link ${ isScrolled ? "" : "navcolor"}`}
               aria-current={isActive(pathname, item.href) ? "page" : undefined}
             >
               {item.label}

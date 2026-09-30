@@ -9,21 +9,37 @@ import Button from "@/components/ui/Button";
 import { marqueeItems } from "@/lib/site";
 
 export default function Header() {
-  const [solid, setSolid] = useState(false);
+  // const [solid, setSolid] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // useEffect(() => {
+  //   const onScroll = () => setSolid(window.scrollY > 40);
+  //   onScroll();
+  //   window.addEventListener("scroll", onScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
+   
 
   useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const ticker = [...marqueeItems, ...marqueeItems];
 
   return (
     <>
-      <div className="yc-topbar" aria-hidden="true">
+      {/* <div className="yc-topbar" aria-hidden="true">
         <div className="yc-topbar__track">
           {ticker.map((item, i) => (
             <span className="yc-topbar__item" key={`${item}-${i}`}>
@@ -31,13 +47,14 @@ export default function Header() {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <header className={`yc-header yc-header--solid${solid ? " yc-header--scrolled" : ""}`}>
+      <header className={`yc-header ${ isScrolled ? "yc-header--solid yc-header--scrolled" : ""
+      }`}>
         <div className="yc-container">
           <div className="yc-header__inner">
             <Logo />
-            <Navigation />
+            <Navigation isScrolled={isScrolled} setIsScrolled={setIsScrolled}/>
             <div className="yc-header__actions">
               <Button href="/consultation" size="sm" className="yc-header__cta">
                 Book a Consultation
