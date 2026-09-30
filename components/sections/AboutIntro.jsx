@@ -32,7 +32,7 @@ export default function AboutIntro() {
               <div className="col-5">
                 <div className="yc-shape-arch-down">
                   <Image
-                    src="/images/team/manish-and-pooja.jpg"
+                    src="/images/img.jpeg"
                     alt="Yogacharya Manish and Yogini Pooja seated in meditation"
                     width={1400}
                     height={800}
