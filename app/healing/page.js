@@ -30,7 +30,7 @@ export default function HealingPage() {
       <PageHeader
         title="Heal Naturally, from Anywhere"
         breadcrumb={[{ label: "Remote Healing" }]}
-        intro="Heal naturally from stress, PCOD, infertility, and chronic pain with yoga & breathwork."
+        intro="Recover from chronic anxiety, panic, hormonal imbalances, and persistent stress through personalized, live 1-on-1 therapeutic sessions."
       />
 
       <section className="yc-section yc-bg-cream-light">
@@ -39,7 +39,7 @@ export default function HealingPage() {
             <Reveal className="col-lg-6" animation="fade-right">
               <div className="yc-shape-arch">
                 <Image
-                  src="/images/team/partners-namaste.jpg"
+                  src="/images/meditation/IMG_2621.JPG"
                   alt="Yogacharya Manish and Yogini Pooja standing in namaste"
                   width={1080}
                   height={1920}
@@ -52,15 +52,14 @@ export default function HealingPage() {
             <Reveal className="col-lg-6" animation="fade-left">
               <SectionHeading
                 eyebrow="Remote healing"
-                title="Restore balance and vitality, guided live over video"
-                text="From obesity and anxiety to diabetes and joint pain — thousands, including top corporate leaders and celebrities, trust Yogic Company to restore balance and vitality."
+                title="Root-Cause Restoration, Guided Live Over Video"
+                text="From severe anxiety, panic attacks, and burnout to chronic insomnia and hormonal fatigue — thousands, including corporate leaders and global professionals, trust Yogic Company to restore deep physiological calm."
               />
               <p className="mt-3">
-                You don&rsquo;t have to live with these challenges. With the right
-                guidance, your body already knows how to heal.
+                You do not have to live in a state of constant nervous system strain. Guided by 20+ years of clinical mastery, our targeted breath-led diagnostics work directly with your physiology to heal at the root cause.
               </p>
               <div className="mt-4">
-                <Button href="/enquiry/general">Start your healing journey</Button>
+                <Button href="/enquiry/general">BOOK A DIAGNOSTIC CONSULTATION </Button>
               </div>
             </Reveal>
           </div>

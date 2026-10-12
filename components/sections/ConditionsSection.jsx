@@ -5,7 +5,7 @@ import { conditions } from "@/lib/content/conditions";
 
 export default function ConditionsSection({
   eyebrow = "Overcome Stress, Pain, and Health Challenges",
-  title = "We Deal With",
+  title = "Health Conditions We Treat",
   text = "Our expertly crafted practices address stress, anxiety, mental wellness, chronic conditions, back pain, and infertility, guiding you toward lasting health and balance. Discover holistic solutions designed for profound, sustainable transformation.",
   background = "yc-bg-cream",
 }) {

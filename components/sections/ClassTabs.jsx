@@ -64,7 +64,7 @@ export default function ClassTabs() {
           <div className="mt-4 d-flex flex-wrap gap-3">
             <Button href={`/classes#${current.id}`}>Learn More</Button>
             <Button href="/enquiry/general" variant="outline">
-              Enquire
+              RESERVE A SPOT
             </Button>
           </div>
         </div>

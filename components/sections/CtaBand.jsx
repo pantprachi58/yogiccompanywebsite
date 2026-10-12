@@ -4,7 +4,7 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function CtaBand({
   eyebrow = "Start where you are",
-  title = "Rediscover wellness, one breath at a time",
+  title = "Begin Your Healing Journey Today",
   text = "Tell us what you would like to work on and we will suggest a class or programme that fits.",
   primary = { label: "Book a Session", href: "/book" },
   secondary = { label: "Talk to us", href: "/contact" },

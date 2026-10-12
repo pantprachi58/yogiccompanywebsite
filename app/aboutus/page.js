@@ -51,15 +51,12 @@ export default function AboutPage() {
             <Reveal className="col-lg-6" animation="fade-left">
               <SectionHeading
                 eyebrow="About Yogic Company"
-                title="If you're experiencing challenges with stress, energy levels, or overall well-being, we can help"
-                text="We can help you cultivate greater peace, vitality, and a more fulfilling life."
+                title="Rooted in Himalayan Tradition. Driven by Clinical Precision."
+                text="Restoring mental clarity, nervous system balance, and physical vitality through classical breath science and movement."
               />
               <p className="mt-3">
-                At Yogic Company we bring ancient Indian breathing techniques and
-                mindful postures to the forefront, inspiring a journey of true
-                rejuvenation. Our mission is to guide you toward balance,
-                connection, and a renewed sense of vitality through holistic
-                wellness practices.
+                From our center in Dehradun at the foothills of the Himalayas, Yogic Company bridges ancient Pranayama with modern wellness needs. We support practitioners across India and worldwide through specialized group classes, personalized 1-on-1 therapeutic consultations, and corporate programs.
+
               </p>
               <p>
                 We teach from {site.locality}, in the Himalayan foothills, and work
@@ -69,7 +66,7 @@ export default function AboutPage() {
               <div className="mt-4 d-flex flex-wrap gap-3">
                 <Button href="/programs">Our Programmes</Button>
                 <Button href="/we-deal-with" variant="outline">
-                  What We Deal With
+                 CONDITIONS WE TREAT
                 </Button>
               </div>
             </Reveal>
@@ -160,7 +157,7 @@ export default function AboutPage() {
           </div>
 
           <Reveal className="text-center mt-5">
-            <Button href="/consultation">Book a consultation with Yogacharya Manish</Button>
+            <Button href="/consultation">BOOK A WOMEN'S WELLNESS CALL</Button>
           </Reveal>
         </div>
       </section>
@@ -173,9 +170,9 @@ export default function AboutPage() {
       <TestimonialsSection />
 
       <CtaBand
-        title="Rediscover wellness, one breath at a time"
-        text="Tell us what you would like to work on and we will suggest a class, programme or one-to-one session that fits."
-        primary={{ label: "Start an enquiry", href: "/enquiry/general" }}
+        title="Begin Your Healing Journey Today"
+        text="Share your current health goals or challenges, and our team will guide you toward the right therapeutic program or 1-on-1 consultation."
+        primary={{ label: "BOOK A DIAGNOSTIC CONSULTATION", href: "/enquiry/general" }}
         secondary={{ label: "Contact us", href: "/contact" }}
       />
     </>

@@ -31,10 +31,7 @@ export default function BreathingCore() {
               At Yogic Company, we teach the ancient science of conscious breathing—a
               gentle yet transformative practice that floods your body with up to 20
               times more oxygen. This surplus breath doesn&rsquo;t just energize; it
-              heals. It soothes stress, balances hormones, and restores clarity. From
-              chronic pain and thyroid imbalances to diabetes, anxiety, and asthma—our
-              breathwork is helping people reclaim vitality, one mindful inhale at a
-              time.
+              heals. It soothes stress, balances hormones, and restores clarity. Our breathwork programs focus on nervous system regulation—helping practitioners relieve severe anxiety, mental fatigue, thyroid imbalances, chronic pain, and sleep disruptions by restoring natural oxygenation and deep physiological calm.
             </p>
             <div className="mt-4 d-flex flex-wrap gap-3">
               <Button href="/whitepaper" variant="light">

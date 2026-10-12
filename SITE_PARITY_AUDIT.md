@@ -94,7 +94,7 @@ Each of the eight testimonial cards links to that client's Instagram post, as on
 | Person | Wellness area | Instagram post |
 |---|---|---|
 | Rebecca | Sleep Disorder | `instagram.com/p/C52I0XWvBIg/` |
-| Daler Mehndi | Holistic Wellness | `instagram.com/p/CzlZcXovSp4/` |
+| Daler Mehndi ji | Holistic Wellness | `instagram.com/p/CzlZcXovSp4/` |
 | Zohran | Stress & Acne | `instagram.com/p/Cn8WWmYjsQH/` |
 | Sakshi Malik | Rejuvination & Healing | `instagram.com/p/CznKkhdvKrM/` |
 | Jagriti | Anxiety Attacks | `instagram.com/p/C7a4XDgoTHx/` |

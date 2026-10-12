@@ -40,7 +40,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Marquee items={marqueeItems} />
+      {/* <Marquee items={marqueeItems} /> */}
       <ClassesSection />
       <ConditionsSection />
       <SeriesSection />
