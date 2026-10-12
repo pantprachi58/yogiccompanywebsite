@@ -103,7 +103,7 @@ img { max-width: 100%; height: auto; }
 .yc-skip-link:focus { left: 0; color: #fff; }
 
 /* ---------- Layout helpers ---------- */
-.yc-section { padding-block: var(--yc-section-y); position: relative; }
+.yc-section { padding-block: 50px; position: relative; }
 .yc-section--tight { padding-block: clamp(2.5rem, 5vw, 4.5rem); }
 .yc-bg-cream { background-color: var(--yc-cream); }
 .yc-bg-cream-light { background-color: var(--yc-cream-light); }
