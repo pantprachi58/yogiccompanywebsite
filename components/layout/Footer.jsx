@@ -70,7 +70,7 @@ export default function Footer() {
         <div className="yc-footer__bottom">
           <span>
             &copy; {new Date().getFullYear()} {site.legalName}. All Rights Reserved. Crafted with ❤️ by{" "}
-            <a href="https://www.vdinfotech.in/" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>
+            <a href="https://www.vdinfotech.in/" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
               VD Infotech
             </a>.
           </span>
