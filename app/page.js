@@ -27,14 +27,15 @@ export default function HomePage() {
       <CaseStudyBand />
       <ProgramsSection />
 
-      <section className="yc-section--tight yc-bg-cream-light">
+      <section className="yc-sutra-section">
         <div className="yc-container">
           <SutraQuote
             sutra={{
               sanskrit: "अभ्यासवैराग्याभ्यां तन्निरोधः",
+              transliteration: "Abhyāsa-vairāgyābhyāṁ tannirodhaḥ",
               translation:
-                "The mind's fluctuations are restrained through practice and detachment",
-              source: "Patanjali Yoga Sutra",
+                "The fluctuations of the mind are quieted through dedicated practice and conscious detachment.",
+              source: "PATANJALI YOGA SUTRA 1.12",
             }}
           />
         </div>

@@ -3,6 +3,16 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiArrowRight } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa6";
+import { site } from "@/lib/site";
+
+function buildWhatsAppMessage(email) {
+  return `Hello Yogic Company, I would like to subscribe to your newsletter.\n\nEmail: ${email.trim()}`;
+}
+
+function whatsappUrl(text) {
+  return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(text)}`;
+}
 
 export default function NewsletterForm() {
   const [sent, setSent] = useState(false);
@@ -13,10 +23,14 @@ export default function NewsletterForm() {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = async () => {
-    await new Promise((r) => setTimeout(r, 400));
+  const onSubmit = async (values) => {
+    const url = whatsappUrl(buildWhatsAppMessage(values.email));
+    window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
-    reset();
+    setTimeout(() => {
+      reset();
+      setSent(false);
+    }, 5000);
   };
 
   return (
@@ -36,7 +50,7 @@ export default function NewsletterForm() {
           })}
         />
         <button type="submit" className="yc-btn yc-btn--light" disabled={isSubmitting}>
-          Subscribe <FiArrowRight aria-hidden="true" />
+          Subscribe <FaWhatsapp aria-hidden="true" />
         </button>
       </div>
 
@@ -57,7 +71,7 @@ export default function NewsletterForm() {
         {errors.consent ? <span className="yc-field__error">{errors.consent.message}</span> : null}
         {sent ? (
           <p className="mt-2 mb-0" style={{ color: "#fff", fontSize: "0.9rem" }}>
-            Thank you — we&rsquo;ll be in touch.
+            WhatsApp opened with your subscription request. Press send there to complete.
           </p>
         ) : null}
       </div>

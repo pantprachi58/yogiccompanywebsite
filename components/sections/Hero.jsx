@@ -12,7 +12,7 @@ const slides = [
   {
     lead: "Awakening Human Consciousness Through",
     accent: "Breath & Stillness",
-    text: "Rooted in Himalayan yogic lineage. Guided practices in classical pranayama, consciousness exploration, and therapeutic restoration.",
+    text: "Recover from anxiety, panic, and chronic stress through personalized Pranayama & traditional Yogic Science.",
     cta: { label: "Explore Programs", href: "/programs" },
   },
   {
@@ -24,7 +24,7 @@ const slides = [
   {
     lead: "Breathe. Live.",
     accent: "Love",
-    text: "Flagship programmes for stress, breath capacity and sleep — guided live, adapted to you, and built to keep.",
+    text: "Your mind doesn't need another app. It needs the right practice — and a guide who knows you.",
     cta: { label: "Book a Consultation", href: "/consultation" },
   },
 ];

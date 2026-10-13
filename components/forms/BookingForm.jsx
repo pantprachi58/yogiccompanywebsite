@@ -2,8 +2,45 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaWhatsapp } from "react-icons/fa6";
 import { classes } from "@/lib/content/classes";
 import { programs } from "@/lib/content/programs";
+import { site } from "@/lib/site";
+
+function formatDate(value) {
+  if (!value) return "";
+  return new Date(`${value}T00:00:00`).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+function formatTime(value) {
+  if (!value) return "";
+  return value;
+}
+
+function buildWhatsAppMessage(values) {
+  const lines = [
+    "Hello Yogic Company, I would like to book a session.",
+    "",
+    `Name: ${values.name.trim()}`,
+    `Email: ${values.email.trim()}`,
+    `Session format: ${values.format}`,
+  ];
+  
+  if (values.program) lines.push(`Programme of interest: ${values.program}`);
+  if (values.date) lines.push(`Preferred date: ${formatDate(values.date)}`);
+  if (values.time) lines.push(`Preferred time: ${formatTime(values.time)}`);
+  if (values.notes?.trim()) lines.push("", `Notes: ${values.notes.trim()}`);
+  
+  return lines.join("\n");
+}
+
+function whatsappUrl(text) {
+  return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(text)}`;
+}
 
 export default function BookingForm() {
   const [sent, setSent] = useState(false);
@@ -14,10 +51,14 @@ export default function BookingForm() {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = async () => {
-    await new Promise((r) => setTimeout(r, 500));
+  const onSubmit = async (values) => {
+    const url = whatsappUrl(buildWhatsAppMessage(values));
+    window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
-    reset();
+    setTimeout(() => {
+      reset();
+      setSent(false);
+    }, 5000);
   };
 
   return (
@@ -109,23 +150,21 @@ export default function BookingForm() {
 
       <div>
         <button type="submit" className="yc-btn" disabled={isSubmitting}>
-          {isSubmitting ? "Sending…" : "Request this session"}
+          <FaWhatsapp aria-hidden="true" /> Continue on WhatsApp
         </button>
       </div>
 
       <div aria-live="polite">
         {sent ? (
           <p className="yc-form__status mb-0">
-            Thank you — your request is with us. We&rsquo;ll confirm a time by
-            email or on {""}
-            <a href="tel:+918171067206">+91 8171067206</a>.
+            WhatsApp opened with your booking details. Press send there to complete your request.
           </p>
         ) : null}
       </div>
 
       <p className="yc-form__note mb-0">
-        Requests are confirmed by a person, not automatically — this form is not
-        yet wired to a booking system.
+        This opens WhatsApp with your details ready to send. We only receive them when you
+        press send there. Prefer to call? <a href={site.phoneHref}>{site.phone}</a>
       </p>
     </form>
   );

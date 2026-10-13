@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { FiMapPin, FiPhone, FiMail, FiInstagram, FiFacebook } from "react-icons/fi";
-import { site, footerLinks, socials } from "@/lib/site";
+import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import { site, footerLinks } from "@/lib/site";
 import NewsletterForm from "@/components/forms/NewsletterForm";
 import SocialStrip from "@/components/sections/SocialStrip";
 import SiteLink from "@/components/ui/SiteLink";
@@ -69,7 +69,10 @@ export default function Footer() {
         
         <div className="yc-footer__bottom">
           <span>
-            &copy; {new Date().getFullYear()} {site.legalName}. All rights reserved.
+            &copy; {new Date().getFullYear()} {site.legalName}. All Rights Reserved. Crafted with ❤️ by{" "}
+            <a href="https://www.vdinfotech.in/" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>
+              VD Infotech
+            </a>.
           </span>
           <span className="d-flex gap-3 flex-wrap">
             <Link href="/privacy-policy">Privacy Policy</Link>

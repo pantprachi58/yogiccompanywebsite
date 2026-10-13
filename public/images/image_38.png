@@ -1,0 +1,10 @@
+<!-- Placeholder - Replace this file with your actual Lotus Yantra PNG image -->
+<!-- This is a temporary SVG file saved as .png for placeholder purposes -->
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="20" cy="20" r="18" stroke="#C9A961" stroke-width="1" opacity="0.5"/>
+  <circle cx="20" cy="20" r="12" stroke="#C9A961" stroke-width="0.5" opacity="0.5"/>
+  <path d="M20 8 L22 15 L20 20 L18 15 Z" fill="#C9A961" opacity="0.5"/>
+  <path d="M32 20 L25 22 L20 20 L25 18 Z" fill="#C9A961" opacity="0.5"/>
+  <path d="M20 32 L22 25 L20 20 L18 25 Z" fill="#C9A961" opacity="0.5"/>
+  <path d="M8 20 L15 22 L20 20 L15 18 Z" fill="#C9A961" opacity="0.5"/>
+</svg>

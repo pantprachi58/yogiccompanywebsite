@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { FiArrowLeft, FiArrowRight, FiCheck } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa6";
+import { site } from "@/lib/site";
 
 const EMAIL_RE = /^\S+@\S+\.\S+$/;
 
@@ -20,6 +22,43 @@ function isAnswered(step, answers) {
   if (step.type === "scale") return typeof v === "number";
   if (step.type === "single") return Boolean(v);
   return Array.isArray(v) && v.length > 0;
+}
+
+function buildWhatsAppMessage(form, steps, answers, other) {
+  const lines = [
+    `Hello Yogic Company, I completed the ${form.name}.`,
+    "",
+  ];
+  
+  // Add contact info
+  const contactStep = steps.find((s) => s.fields);
+  if (contactStep) {
+    contactStep.fields.forEach((f) => {
+      const value = answers[f.name];
+      if (value?.trim()) {
+        lines.push(`${f.label}: ${value.trim()}`);
+      }
+    });
+    lines.push("");
+  }
+  
+  // Add answers
+  lines.push("My Answers:");
+  steps
+    .filter((s) => !s.fields)
+    .forEach((s) => {
+      const answer = [answers[s.id], other[s.id]].flat().filter(Boolean).join(", ");
+      if (answer) {
+        lines.push(`\nQ: ${s.question}`);
+        lines.push(`A: ${answer}`);
+      }
+    });
+  
+  return lines.join("\n");
+}
+
+function whatsappUrl(text) {
+  return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }
 
 export default function QuizForm({ form }) {
@@ -52,34 +91,12 @@ export default function QuizForm({ form }) {
     setTouched(true);
     if (!ready) return;
     setStatus({ state: "sending" });
-    const payload = {
-      form: form.slug,
-      formName: form.name,
-      answers: steps
-        .filter((s) => !s.fields)
-        .map((s) => ({
-          question: s.question,
-          answer: [answers[s.id], other[s.id]].flat().filter(Boolean).join(", "),
-        })),
-      contact: Object.fromEntries(
-        (steps.find((s) => s.fields)?.fields || []).map((f) => [f.name, answers[f.name] || ""])
-      ),
-    };
-    try {
-      const res = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.delivered) {
-        setStatus({ state: "sent" });
-      } else {
-        setStatus({ state: "unconfigured" });
-      }
-    } catch {
-      setStatus({ state: "error" });
-    }
+    
+    const message = buildWhatsAppMessage(form, steps, answers, other);
+    const url = whatsappUrl(message);
+    
+    window.open(url, "_blank", "noopener,noreferrer");
+    setStatus({ state: "sent" });
   };
 
   if (status.state === "sent") {
@@ -87,12 +104,12 @@ export default function QuizForm({ form }) {
       <div className="yc-quiz">
         <div className="yc-quiz__done">
           <span className="yc-quiz__donemark" aria-hidden="true">
-            <FiCheck />
+            <FaWhatsapp />
           </span>
-          <h2>Thank you — we have your answers.</h2>
+          <h2>Your answers are ready</h2>
           <p className="mb-0">
-            One of our teachers will read through what you have shared and get back
-            to you personally.
+            WhatsApp should have opened with your answers filled in. Press send there and
+            we&rsquo;ll take it from here. Nothing reaches us until you do.
           </p>
         </div>
       </div>
@@ -246,7 +263,7 @@ export default function QuizForm({ form }) {
 
         {isLast ? (
           <button type="submit" className="yc-btn" disabled={status.state === "sending"}>
-            {status.state === "sending" ? "Sending…" : "Submit"}
+            {status.state === "sending" ? "Preparing…" : <><FaWhatsapp aria-hidden="true" /> Continue on WhatsApp</>}
           </button>
         ) : (
           <button
@@ -266,19 +283,10 @@ export default function QuizForm({ form }) {
       </div>
 
       <div aria-live="polite">
-        {status.state === "unconfigured" ? (
-          <p className="yc-form__status mt-3 mb-0">
-            Your answers could not be delivered because no enquiry endpoint is
-            configured yet. Please send them to{" "}
-            <a href="mailto:hello@yogiccompany.com">hello@yogiccompany.com</a> or
-            message <a href="https://wa.me/8171067206">+91 8171067206</a> and we
-            will pick it up from there.
-          </p>
-        ) : null}
         {status.state === "error" ? (
           <p className="yc-form__status mt-3 mb-0">
-            Something went wrong sending this. Please try again, or write to{" "}
-            <a href="mailto:hello@yogiccompany.com">hello@yogiccompany.com</a>.
+            Something went wrong. Please try again, or message us directly on{" "}
+            <a href={site.whatsappHref}>WhatsApp</a>.
           </p>
         ) : null}
       </div>

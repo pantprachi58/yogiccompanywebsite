@@ -2,6 +2,27 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaWhatsapp } from "react-icons/fa6";
+import { site } from "@/lib/site";
+
+function buildWhatsAppMessage(values) {
+  const lines = [
+    "Hello Yogic Company, I have an enquiry.",
+    "",
+    `Name: ${values.name.trim()}`,
+    `Email: ${values.email.trim()}`,
+  ];
+  
+  if (values.phone?.trim()) lines.push(`Phone: ${values.phone.trim()}`);
+  if (values.subject) lines.push(`About: ${values.subject}`);
+  if (values.message?.trim()) lines.push("", `Message: ${values.message.trim()}`);
+  
+  return lines.join("\n");
+}
+
+function whatsappUrl(text) {
+  return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(text)}`;
+}
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -12,10 +33,14 @@ export default function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = async () => {
-    await new Promise((r) => setTimeout(r, 500));
+  const onSubmit = async (values) => {
+    const url = whatsappUrl(buildWhatsAppMessage(values));
+    window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
-    reset();
+    setTimeout(() => {
+      reset();
+      setSent(false);
+    }, 5000);
   };
 
   return (
@@ -95,22 +120,21 @@ export default function ContactForm() {
 
       <div>
         <button type="submit" className="yc-btn" disabled={isSubmitting}>
-          {isSubmitting ? "Sending…" : "Send message"}
+          <FaWhatsapp aria-hidden="true" /> Continue on WhatsApp
         </button>
       </div>
 
       <div aria-live="polite">
         {sent ? (
           <p className="yc-form__status mb-0">
-            Thank you — your message is with us. We usually reply within two
-            working days.
+            WhatsApp opened with your message. Press send there to reach us.
           </p>
         ) : null}
       </div>
 
       <p className="yc-form__note mb-0">
-        This form is not yet connected to a mailbox. Until it is, please write to{" "}
-        <a href="mailto:hello@yogiccompany.com">hello@yogiccompany.com</a>.
+        This opens WhatsApp with your details ready to send. We only receive them when you
+        press send there. Prefer email? <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
     </form>
   );
